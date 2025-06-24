@@ -19,7 +19,7 @@ This is a Django application that uses [`django-widget-tweaks`](https://pypi.org
 
    ```bash
    git clone https://github.com/yourusername/your-django-app.git
-   cd your-django-app
+   cd folklore
    ```
 Create and activate a virtual environment:
 
@@ -34,6 +34,6 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 ```bash
-python manage.py migrate
-python manage.py runserver
+
+python3 manage.py runserver
 ```
