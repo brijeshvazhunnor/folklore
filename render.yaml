@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: folklore
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn folklore_fest.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: folklore_fest.settings
+      - key: PYTHON_VERSION
+        value: 3.11
+
