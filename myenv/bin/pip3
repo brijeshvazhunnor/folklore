@@ -1,4 +1,4 @@
-#!/home/csnasc/folklore/myenv/bin/python3
+#!/home/sharath/folklore/myenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
