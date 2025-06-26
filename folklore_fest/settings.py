@@ -6,8 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-llfm#-h1fegz8ske_5q^88mg1_s&(0e6&09x#wx9hxyt^g04))'
 
 DEBUG = False  # Turned off for production
-
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+#hey
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1','*']
 CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
 
 # Application definition

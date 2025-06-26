@@ -1,106 +1,289 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kannur University Folklore Film Fest 2025</title>
+    <title>Kannur University Cultural Festivals 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #8e0000;
+            --secondary-color: #ffc107;
+            --dark-color: #1a1a1a;
+            --light-color: #f8f9fa;
+        }
+        
         body {
-            background: url('/static/bg.jpg') no-repeat center center fixed;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(31, 30, 30, 0.8), rgba(48, 43, 43, 0.8)), 
+                        url("{% static 'bg.jpg' %}");
             background-size: cover;
-            color: white;
-            min-height: 100vh;
+            background-position: center;
+            padding: 80px 0;
+            position: relative;
         }
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-            min-height: 100vh;
-            padding: 20px 0;
-        }
-        .register-btn {
-            background-color: #ffc107;
-            border: none;
-            color: black;
-            padding: 10px 20px;
-            font-weight: bold;
-            width: 100%;
-            max-width: 200px;
-        }
-        .register-btn:hover {
-            background-color: #e0a800;
-        }
-        .fest-card {
-            background-color: rgba(0, 0, 0, 0.85);
-            color: white;
-            border-radius: 15px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        @media (min-width: 992px) {
-            .fest-card {
-                max-width: 550px;
-                margin-left: auto;
-            }
-        }
-        .title-section {
+        
+        .festival-card {
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.3s ease;
             margin-bottom: 30px;
+            border: none;
         }
-        h1 {
-            font-size: calc(1.5rem + 1.5vw);
-            line-height: 1.2;
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
         }
-        h5 {
-            font-size: calc(0.8rem + 0.8vw);
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--secondary-color);
         }
-        ul {
-            padding-left: 1.2rem;
+        
+        .card-body {
+            padding: 25px;
         }
-        li {
-            margin-bottom: 8px;
+        
+        .card-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 10px 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6e0000;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .festival-highlight {
+            background-color: var(--primary-color);
+            padding: 60px 0;
+        }
+        
+        .highlight-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background-color: #000;
+            padding: 30px 0;
+            color: #aaa;
+        }
+        
+        .social-icons a {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .date-badge {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .festival-logo {
+            max-height: 80px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="overlay d-flex align-items-center">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                    <img src="{% static 'logoname.png' %}" alt="Kannur University Ethnic Art Festival" class="img-fluid rounded shadow">
+                    <p class="bottom-three" style="margin-bottom:1cm;">
+
+                    </p>
+                    <h2 style="font-family: 'Courier New', monospace; text-shadow: 1px 1px 2px #080808;"><strong>Carnival'd Folk</strong></h2>
+                    <h1 class="display-4 fw-bold mb-3">KANNUR UNIVERSITY FOLKLORE FILM FEST 2025</h1>
+                    <p class="lead mb-4">Nehru Arts and Science College Kanhangad</p>
+                    <a href="#festivals" class="btn btn-primary btn-lg">About Fest</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section id="festivals" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">OUR FESTIVALS</h2>
+            
             <div class="row">
-                <!-- LEFT SIDE: Title and Image -->
-                <div class="col-lg-6 title-section text-center text-lg-start my-auto">
-                    <h1 class="fw-bold">KANNUR UNIVERSITY FOLKLORE FILM FEST 2025</h1>
-                    <h5 class="mb-4">NEHRU ARTS AND SCIENCE COLLEGE, KANHANGAD</h5>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="{% url 'register' %}" class="btn register-btn mt-3">Register Now</a>
+                <!-- Folklore Film Festival -->
+                <div class="col-lg-6">
+                    <div class="festival-card">
+                        <img src="{% static 'theyyam1.jpg' %}" class="card-img-top" alt="Folklore Film Festival">
+                        <div class="card-body">
+                            <span class="date-badge">June 2-3, 2025</span>
+                            <h3 class="card-title">FOLKLORE FILM FESTIVAL</h3>
+                            <p class="card-text">
+                                കണ്ണൂർ സർവകലാശാല യൂണിയന്റെ നേതൃത്വത്തിൽ പ്രാദേശിക കലകളും വെള്ളിത്തിരയിലെ വിസ്മയങ്ങളും നാട്ടുരുചികളും കോർത്തിണക്കി <strong> Carnival'd Folk -Kannur University Union Ethnic Art Festival</strong> ന്റെ ആദ്യ പതിപ്പ് പടന്നക്കാട് നെഹ്‌റു കോളേജിൽ വെച്ചു നടത്തുകയാണ് 
+
+                            </p>
+                            <ul class="mb-4">
+                                <li><strong>പ്രാദേശിക കലകളുടെ പ്രദർശനം</strong></li>
+                                <li><strong>ഹ്രസ്വ ചലച്ചിത്ര മേള </strong></li>
+                                <li><strong>പ്രദർശന വിപണന മേള</strong></li>
+                                <li><strong>ഭക്ഷ്യ മേള</strong></li>
+                            </ul>
+                            <p><strong>Venue:</strong> Nehru Arts & Science College, Kanhangad</p>
+                            <a href="https://tiqr.events/e/Kannur-University-Folklore-Fest-2025-1292" class="btn btn-primary">Register Now</a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- RIGHT SIDE: Details -->
+                
+                <!-- Ethnic Art Festival -->
                 <div class="col-lg-6">
-                    <div class="card p-3 p-md-4 shadow-lg fest-card">
-                        <h4 class="text-warning mb-3 fw-bold">About Fest</h4>
-                        <p style="text-align: justify; line-height: 1.7;">
-                            കണ്ണൂർ സർവകലാശാല യൂണിയന്റെ ഫോൾക്‌ലോർ ഫിലിം ഫെസ്റ്റ് വളരെ വിപുലമായി വിവിധയിനം മിനി ഫെസ്റ്റുകൾ ഉൾപ്പെടുത്തി നടത്തുവാൻ പോകുന്നു. ഫിലിം ഫെസ്റ്റ്,ഫുഡ് ഫെസ്റ്റ്,എക്സിബിഷൻ , കൾച്ചറൽ പ്രോഗ്രാം , സെക്ഷനുകൾ എന്നിവ ഉൾപ്പെടുന്നു . ചരിത്രത്തിലാദ്യമായി കണ്ണൂർ സർവകലാശാല യൂണിയൻ ലിറ്ററേച്ചർ ഫെസ്റ്റിവൽ ഉൾപ്പെടെ വിജയാകാമായി നടത്തി പുതിയ ഒരു ഫെസ്‌റ്റിന്‌കൂടെ രൂപം കൊടുക്കുന്നു 
-                        </p>
-
-                        <h5 class="mt-3 text-light">വിവരണം:</h5>
-                        <ul>
-                            <li><strong>ഫിലിം ഫെസ്റ്റ്:</strong> ഉത്ഘാടന ചടങ്ങ് , ഷോർട്ട് ഫിലിം പ്രദർശനം, ചർച്ച, വിലയിരുത്തൽ </li>
-                            <li><strong>ഫുഡ് ഫെസ്റ്റ്:</strong> വിവിധയിനം നാടൻ പലഹാരങ്ങളും ഭക്ഷണങ്ങളും ഉൾപ്പെടുത്തിയുള്ള സ്റ്റാളുകൾ </li>
-                            <li><strong>എക്സിബിഷൻ:</strong> ഫോക് പ്രകടനങ്ങൾ,ചർച്ച,വിലയിരുത്തൽ, ബുക്ക് സ്റ്റാളുകൾ </li>
-                            <li><strong>കൾച്ചറൽ പ്രോഗ്രാംസ് </strong> </li>
-                        </ul>
-
-                        <p class="mt-3"><strong>വേദി:</strong><br>നഹ്റു ആർട്സ് ആൻഡ് സയൻസ് കോളേജ്, കാഞ്ഞങ്ങാട്</p>
-                        <p><strong>തീയതി:</strong><br>ജൂലൈ 02–03, 2025</p>
-                        <p><strong>കൂടുതലറിയുവാൻ:</strong><br>
-                            Email: kannuruniversityfolkfest25@gmail.com<br>
-                            ഫോൺ: +91 9895548456
-                        </p>
+                    <div class="festival-card">
+                        <img src="{% static 'logo.jpg' %}" class="card-img-top" alt="Ethnic Art Festival">
+                        <div class="card-body">
+                            <span class="date-badge">Coming Soon</span>
+                            <h3 class="card-title">ETHNIC ART FESTIVAL - EDITION 1</h3>
+                            <p class="card-text">
+                                കണ്ണൂർ സർവകലാശാലയുടെ ആദ്യത്തെ എത്ത്നിക് ആർട്ട് ഫെസ്റ്റിവൽ പരമ്പരാഗത കലകളുടെയും കലാരൂപങ്ങളുടെയും ഒരു സമ്പന്നമായ പ്രദർശനം. പരമ്പരാഗത നൃത്തം, സംഗീതം, ചിത്രകല, ശിൽപ്പം തുടങ്ങിയവയുടെ ഒരു സമഗ്ര പ്രദർശനം.
+                            </p>
+                            <ul class="mb-4">
+                                <li><strong>Traditional Arts:</strong> Dance, music, and folk performances</li>
+                                <li><strong>Art Exhibition:</strong> Paintings, sculptures, and installations</li>
+                                <li><strong>Workshops:</strong> Interactive sessions with artists</li>
+                                <li><strong>Craft Bazaar:</strong> Traditional handicrafts and artifacts</li>
+                            </ul>
+                            <p><strong>Venue:</strong> To be announced</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="festival-highlight">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 highlight-item">
+                    <div class="highlight-icon">🎥</div>
+                    <h3>Film Screenings</h3>
+                    <p>Showcasing the best of regional folklore cinema</p>
+                </div>
+                <div class="col-md-4 highlight-item">
+                    <div class="highlight-icon">🎭</div>
+                    <h3>Cultural Programs</h3>
+                    <p>Traditional performances from across Kerala</p>
+                </div>
+                <div class="col-md-4 highlight-item">
+                    <div class="highlight-icon">🍽️</div>
+                    <h3>Food Festival</h3>
+                    <p>Authentic Kerala cuisine and traditional delicacies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">CONTACT US</h2>
+                    <p><strong>For Folklore Film Festival:</strong></p>
+                    <p>Email: kannuruniversityfolkfest25@gmail.com<br>
+                    Phone: +91 9895548456</p>
+                    
+                    <p class="mt-4"><strong>For Ethnic Art Festival:</strong></p>
+                    <p>Details coming soon</p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">VENUE</h2>
+                    <p><strong>Folklore Film Festival Venue:</strong></p>
+                    <p>Nehru Arts and Science College<br>
+                    Padannakkad, Kanhangad<br>
+                    Kannur District, Kerala</p>
+                    
+                    <div class="mt-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.843245429976!2d75.11394927506456!3d12.258885187994798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba47b03b4196e21%3A0x17fec764896d5958!2sNehru%20Arts%20%26%20Science%20College%20Padnekad!5e0!3m2!1sen!2sin!4v1750930869420!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 Kannur University Union. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
