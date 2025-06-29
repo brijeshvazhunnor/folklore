@@ -207,31 +207,71 @@
                 <!-- js -->
                 <div class="col-lg-6">
                     <div class="festival-card">
-                        <img src="{% static 'th3.webp' %}" class="card-img-top" alt="Ethnic Art Festival">
+                        <!-- Hero Image with Overlay Text -->
+                        <div class="position-relative">
+                            <img src="{% static 'event.webp' %}" class="card-img-top" alt="Soul of Folk Performance" style="height: 280px; object-fit: cover;">
+                            <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: linear-gradient(transparent, rgba(0,0,0,0.8)); width: 100%;">
+                                <h3 class="mb-1">SOUL OF FOLK</h3>
+                                <p class="mb-0">
+                                    <i class="fas fa-calendar-alt me-2"></i>July 2, 6:00 PM | Day 1 Evening Show
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="card-body">
-                            
-                            <!-- QR Code Toggle Section -->
-                            <div class="text-center mb-4">
-                                <button id="qrToggleBtn" class="btn btn-primary mb-2">
-                                    Support Us
-                                </button>
-                                <div id="qrCodeContainer" style="display: none;">
-                                    <img src="{% static 'qr.webp' %}" alt="Support Us" 
-                                         class="img-fluid mb-2" style="max-height: 400px; border: 2px solid var(--secondary-color); border-radius: 8px;">
-                                    <p class="small">Scan to support the festival</p>
+                            <!-- Emotional Event Description -->
+                            <div class="mb-4">
+                                <h4 class="text-warning mb-3">✨ The Unmissable Highlight of the Festival</h4>
+                                <p class="lead" style="font-style: italic;">
+                                    "A mesmerizing celebration of Kerala's living folk traditions!"
+                                </p>
+                                <div class="bg-dark p-3 rounded mb-3" style="border-left: 3px solid var(--secondary-color);">
+                                    <p class="mb-2">
+                                        <strong>"Soul of Folk"</strong> presents an extraordinary musical journey through Kerala's rich folk heritage, 
+                                        featuring the captivating vocals of renowned folk singer <strong class="text-warning">Athul Narukara</strong>.
+                                    </p>
+                                    <p class="mb-0">
+                                        Experience the raw energy of authentic folk music as Athul and his ensemble of talented artists 
+                                        bring to life the soulful melodies and rhythms of our cultural legacy under the evening sky.
+                                    </p>
+                                </div>
+                                <p class="text-center mt-3">
+                                    <span class="badge bg-warning text-dark p-2">🎶 A unique musical experience - Don't miss!</span>
+                                </p>
+                            </div>
+
+                            <!-- Artist Badge -->
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="text-center">
+                                    <img src="{% static 'athul.webp' %}" alt="Athul Narukara" class="rounded-circle mb-2" style="width: 70px; height: 70px; object-fit: cover; border: 2px solid var(--secondary-color);">
+                                    <p class="mb-0"><strong>Athul Narukara</strong></p>
+                                    <p class="small text-muted">Renowned Folk Singer</p>
                                 </div>
                             </div>
-                            
-                            <!-- Schedule Download Section -->
-                            <div class="text-center">
-                                <a href="{% static 'fest.pdf' %}" download class="btn btn-primary mb-2">
-                                    <i class="fas fa-download me-2"></i> Event Schedule
-                                </a>
+
+                            <!-- Action Buttons -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <button id="qrToggleBtn" class="btn btn-primary w-100 py-2">
+                                        <i class="fas fa-qrcode me-2"></i>Support Us
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <a href="{% static 'fest.pdf' %}" download class="btn btn-primary w-100 py-2">
+                                        <i class="fas fa-download me-2"></i>Schedule
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div id="qrCodeContainer" class="text-center mb-3" style="display: none;">
+                                <img src="{% static 'qr.webp' %}" alt="Support Us" 
+                                    class="img-fluid mb-2" style="max-height: 180px; border: 2px solid var(--secondary-color); border-radius: 8px;">
+                                <p class="small">Scan to support the festival</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <script>
                     // Toggle QR Code visibility
                     document.getElementById('qrToggleBtn').addEventListener('click', function() {
@@ -239,15 +279,15 @@
                         const isVisible = qrContainer.style.display !== 'none';
                         
                         qrContainer.style.display = isVisible ? 'none' : 'block';
-                        this.textContent = isVisible ? 'Support Us' : 'Hide';
+                        this.innerHTML = isVisible ? 
+                            '<i class="fas fa-qrcode me-2"></i>Support Us' : 
+                            '<i class="fas fa-times me-2"></i>Close QR';
                         
-                        // Scroll to QR code if showing
                         if (!isVisible) {
                             qrContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         }
                     });
                 </script>
-
 
 
             </div>
